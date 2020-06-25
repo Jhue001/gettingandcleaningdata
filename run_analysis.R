@@ -60,5 +60,5 @@ names(TidyData)<-gsub("gravity", "Gravity", names(TidyData))
 
 resultData <- TidyData %>%
     group_by(subject, activity) %>%
-    summarise_each(TidyData, funs(mean))
+    summarise_each(funs(mean))
 write.table(resultData, "FinalData.txt", row.name=FALSE)
